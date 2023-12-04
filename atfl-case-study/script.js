@@ -218,7 +218,7 @@ function resetQuiz() {
 }
 
 // Event listener for the "Retake Quiz" button
-document.getElementById("retakeQuiz").onclick = function () {
+document.getElementById("retakeQuiz").onclick = (function () {
   resetQuiz();
   document.getElementById("mainQuiz").removeAttribute("style");
   var min = localStorage.getItem("quiztime") - 1;
@@ -235,7 +235,7 @@ document.getElementById("retakeQuiz").onclick = function () {
           sec = 60;
       }
   }, 1000);
-}
+});
 
 
 
