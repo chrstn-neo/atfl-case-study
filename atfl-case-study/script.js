@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Navigate to another HTML file
     window.location.href = "custom-quiz.html";
   });
+  const restartBtn = document.querySelector(".restart");
+  restartBtn.addEventListener("click", () => {
+  window.location.reload();
+});
 });
 
 const progressBar = document.querySelector(".progress-bar"),
@@ -229,10 +233,7 @@ document.getElementById("retakeQuiz").onclick = function () {
   }, 1000);
 }
 
-const restartBtn = document.querySelector(".restart");
-restartBtn.addEventListener("click", () => {
-  window.location.reload();
-});
+
 
 const playAdudio = (src) => {
   const audio = new Audio(src);
