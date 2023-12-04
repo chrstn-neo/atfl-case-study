@@ -1,11 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const returnHome = document.getElementById("returnHome");
-
-    if (returnHome) {
-        returnHome.addEventListener("click", function () {
-            window.location.href = "index.html";
-        });
-    }
+        const returnHomeStart = document.getElementById("returnHomeStart");
+    
+        if (returnHomeStart) {
+            returnHomeStart.addEventListener("click", function () {
+                window.location.href = "index.html";
+            });
+        }
+    
+        const returnHomeResult = document.getElementById("returnHomeResult");
+    
+        if (returnHomeResult) {
+            returnHomeResult.addEventListener("click", function () {
+                window.location.href = "index.html";
+            });
+        }
 
     const nextPageButton = document.getElementById("nextPageButton");
 
