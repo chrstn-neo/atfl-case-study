@@ -7,15 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Navigate to another HTML file
     window.location.href = "custom-quiz.html";
   });
-  const restartBtn = document.querySelector(".restart");
-  if (restartBtn) {
-    restartBtn.addEventListener("click", () => {
-        window.location.reload();
-    });
-    console.log("Restart button found and event listener added.");
-} else {
-    console.error("Restart button not found.");
-}
+});
 
 const progressBar = document.querySelector(".progress-bar"),
   progressText = document.querySelector(".progress-text");
@@ -217,31 +209,12 @@ function resetQuiz() {
   document.getElementById("quizTimer").innerHTML = "00:00";
 }
 
-// Event listener for the "Retake Quiz" button
-document.getElementById("retakeQuiz").onclick = (function () {
-  resetQuiz();
-  document.getElementById("mainQuiz").removeAttribute("style");
-  var min = localStorage.getItem("quiztime") - 1;
-  var sec = 59;
-  timeStart = setInterval(function () {
-      quizTimer.innerHTML = digits(min, sec);
-      sec--;
-      if (min < 0) {
-          clearInterval(timeStart);
-          alert("TIME OUT");
-          resetQuiz(); // Reset quiz on timeout
-      } else if (sec == 0) {
-          min--;
-          sec = 60;
-      }
-  }, 1000);
+const restartBtn = document.querySelector(".restart");
+restartBtn.addEventListener("click", () => {
+  window.location.reload();
 });
-
-
 
 const playAdudio = (src) => {
   const audio = new Audio(src);
   audio.play();
 };
-
-});
