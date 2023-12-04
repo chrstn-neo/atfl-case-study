@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'>
     <link rel="stylesheet" href="quiz.css">
-    <title>Document</title>
+    <title>QuizCraft</title>
 </head>
 <body>
     <div class="container">
@@ -28,26 +31,27 @@
             <p id="error"></p>
           </div>
           <button type="button" class="btn btn-primary" id="question_btn">Add Questions</button>
+          <button type="button" id="returnHome" class="btn btn-success">Return Home</button>
         </div>
-        <div id="input-quiz" style="display:none">
-        <h1 class="center" id="quizName"> </h1>
-            <h3 class="question-heading">Question</h3>
+        <div id="input-quiz" style="display:none;">
+            <h3 class="question-heading">Question:</h3>
                 <input type="text" class="form-control" id="question" placeholder="Question 1">
-                <h4 class="answer-heading">Answers</h4>
-                <input type="text" class="form-control" placeholder="Answer A" id="option1">
-                <input type="text" class="form-control" placeholder="Answer B" id="option2">
-                <input type="text" class="form-control" placeholder="Answer C" id="option3">
-                <input type="text" class="form-control" placeholder="Answer D" id="option4">
                 <br>
-                <select class="form-control" id="answer">
-                    <option selected>Choose Correct Answer</option>
+                <h4 class="answer-heading">Choices:</h4>
+                <input type="text" class="form-input" placeholder="Option A" id="option1">
+                <input type="text" class="form-input" placeholder="Option B" id="option2">
+                <input type="text" class="form-input" placeholder="Option C" id="option3">
+                <input type="text" class="form-input" placeholder="Option D" id="option4">
+                <br>
+                <select class="form-input" id="answer">
+                    <option selected>Choose the Correct Answer</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                 </select>
                 <p id="error1"></p>
-                <button type="button" class="btn nextq" id="nxtQtn">+Question</button>
+                <button type="button" class="btn nextq" id="nxtQtn">Add Question</button>
                 <button type="button" class="btn done" id="done">Done</button>
             </div>
             <div id="created" style="display:none;">
@@ -62,14 +66,16 @@
             </div>
             <div id="mainQuiz" style="display:none">
                 <div class="align">
-                    <h3 id="quizTimer" style="display:inline-block"></h3>
-                    <br>
-                    <h3 id="quizQuestion"></h3>
+                    <div class="text-timer">
+                    <img src="timer.png" alt="timer" id="timeIcon">
+                    <h3 id="quizTimer" style="text-align: right"></h3>
+                    </div>
+                    <h3 id="quizQuestion" style="margin-bottom: 10px;"></h3>
         
                     <div class="custom-control custom-radio">
                         <input type="radio" id="customRadio1" name="option" value="1" class="custom-control-input">
                         <label class="custom-control-label" for="customRadio1" id="optn1"></label>
-                    </div>
+                    </div>   
                     <div class="custom-control custom-radio">
                         <input type="radio" id="customRadio2" name="option" value="2" class="custom-control-input">
                         <label class="custom-control-label" for="customRadio2" id="optn2"></label>
@@ -83,20 +89,22 @@
                         <label class="custom-control-label" for="customRadio4" id="optn4"></label>
                     </div>
                     <p id="noSelect"></p>
-                    <br>
-                    <button type="button" id="nextButton" class="btn btn-success">Next</button>
-                </div>   
-        </div>
+                    <button type="button" id="submitButton" class="btn btn-submit">submit</button>
+                    <button type="button" id="nextButton" class="btn btn-success" style="display: none;">Next</button>
+                </div>
+            </div>
         <div id="resultContainer" style="display:none">
             <div class="align">
-                <h2 class="center" id="congratz"></h2>
-                <h3 class="center" id="yourScore"></h3>
-                <h3 class="center" id="correctQuestions"></h3>
-                
+                <h2 class="center" id="congratz"  style="font-size: 30px; font-weight: 1000;"></h2>
+                <br>
+                <h3 class="center" id="yourScore" style="text-align:center;"></h3>
+                <h3 class="center" id="correctQuestions" style="text-align:center;"></h3>
                 <button id="restartQuiz" class="btn btn-secondary">Restart Quiz</button>
-                <button type="button" id="nextPageButton" class="btn btn-success">Create Quiz</button>
+                <button type="button" id="nextPageButton" class="btn btn-success">Create New Quiz</button>
+                <button type="button" id="returnHome" class="btn btn-success">Return Home</button>
             </div>
+        </div>
     </div>
-        <script src="cquiz.js"></script>
+    <script src="cquiz.js"></script>
 </body>
 </html>

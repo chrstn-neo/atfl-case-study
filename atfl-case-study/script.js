@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Assuming you have a button with the ID "nextPageButton"
+  const cquizBtn = document.getElementById("cquizBtn");
+
+  cquizBtn.addEventListener("click", function () {
+    window.location.href = "custom-quiz.html";
+  });
+  
   const nextPageButton = document.getElementById("nextPageButton");
 
-  // Add an event listener to the button
   nextPageButton.addEventListener("click", function () {
-    // Navigate to another HTML file
     window.location.href = "custom-quiz.html";
   });
 });
@@ -81,7 +84,6 @@ const showQuestion = (question) => {
     questions.indexOf(question) + 1
   }</span>
             <span class="total">/${questions.length}</span>`;
-  //add event listener to each answer
   const answersDiv = document.querySelectorAll(".answer");
   answersDiv.forEach((answer) => {
     answer.addEventListener("click", () => {
@@ -199,7 +201,7 @@ function resetQuiz() {
   result = 0;
   next = 0;
   score = 0;
-  clearInterval(timeStart); // Stop the timer
+  clearInterval(timeStart);
   document.getElementById("mainQuiz").setAttribute("style", "display:none");
   document.getElementById("resultContainer").setAttribute("style", "display:none");
   document.getElementById("created").removeAttribute("style");
