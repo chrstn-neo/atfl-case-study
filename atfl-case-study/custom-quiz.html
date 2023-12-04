@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quiz.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen">
+          <h1 class="heading">QuizCraft</h1>
+          <div class="settings">
+            <label for="num-questions">Quiz Title:</label>
+            <input type="text" class="form-control" placeholder="Enter Quiz Title"
+            id="quizTitle">
+            <label for="num-questions">Name:</label>
+             <input type="text" class="form-control" placeholder="Enter your name here" id="userName">
+             <label for="time">Set Time Limit:</label>
+          <select id="time">
+            <option value="1">1 minute</option>
+            <option value="2">2 minutes</option>
+            <option value="3">3 minutes</option>
+            <option value="5">5 minutes</option>
+            <option value="10">10 minutes</option>
+            <option value="20">20 minutes</option>
+          </select> 
+            <p id="error"></p>
+          </div>
+          <button type="button" class="btn btn-primary" id="question_btn">Add Questions</button>
+        </div>
+        <div id="input-quiz" style="display:none">
+        <h1 class="center" id="quizName"> </h1>
+            <h3 class="question-heading">Question</h3>
+                <input type="text" class="form-control" id="question" placeholder="Question 1">
+                <h4 class="answer-heading">Answers</h4>
+                <input type="text" class="form-control" placeholder="Answer A" id="option1">
+                <input type="text" class="form-control" placeholder="Answer B" id="option2">
+                <input type="text" class="form-control" placeholder="Answer C" id="option3">
+                <input type="text" class="form-control" placeholder="Answer D" id="option4">
+                <br>
+                <select class="form-control" id="answer">
+                    <option selected>Choose Correct Answer</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <p id="error1"></p>
+                <button type="button" class="btn nextq" id="nxtQtn">+Question</button>
+                <button type="button" class="btn done" id="done">Done</button>
+            </div>
+            <div id="created" style="display:none;">
+                <h1 id="ready-banner" class="center">Your Quiz is Ready</h1>
+                <h2 id="titleOfQuiz" class="center"></h2>
+                <h3 id="madeBy" class="center"></h3>
+                <h3 id="timeOfQuiz" class="center"></h3>
+                <h3 id="totalQuestions" class="center"></h3>
+                <h4 id="passing" class="center">Passing Score 60%</h4>
+                <br>
+                    <button type="button" id="takeQuiz" class="btn btn-success">Take Quiz</button>
+            </div>
+            <div id="mainQuiz" style="display:none">
+                <div class="align">
+                    <h3 id="quizTimer" style="display:inline-block"></h3>
+                    <br>
+                    <h3 id="quizQuestion"></h3>
+        
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio1" name="option" value="1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio1" id="optn1"></label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="option" value="2" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio2" id="optn2"></label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio3" name="option" value="3" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio3" id="optn3"></label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio4" name="option" value="4" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio4" id="optn4"></label>
+                    </div>
+                    <p id="noSelect"></p>
+                    <br>
+                    <button type="button" id="nextButton" class="btn btn-success">Next</button>
+                </div>   
+        </div>
+        <div id="resultContainer" style="display:none">
+            <div class="align">
+                <h2 class="center" id="congratz"></h2>
+                <h3 class="center" id="yourScore"></h3>
+                <h3 class="center" id="correctQuestions"></h3>
+                
+                <button id="restartQuiz" class="btn btn-secondary">Restart Quiz</button>
+                <button type="button" id="nextPageButton" class="btn btn-success">Create New Quiz</button>
+            </div>
+    </div>
+        <button class="btn checkanswer">Check answers</button>
+        <script src="cquiz.js"></script>
+</body>
+</html>
