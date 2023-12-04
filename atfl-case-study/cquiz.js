@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("time", selectedTime);
             document.getElementById("start-screen").setAttribute("style", "display:none");
             document.getElementById("input-quiz").removeAttribute("style");
-            document.getElementById("quizName").innerHTML = localStorage.getItem("title");
+            document.getElementById("quizTitle").innerHTML = localStorage.getItem("title");
         }
     };
 
