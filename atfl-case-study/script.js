@@ -8,10 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "custom-quiz.html";
   });
   const restartBtn = document.querySelector(".restart");
-  restartBtn.addEventListener("click", () => {
-  window.location.reload();
-});
-});
+  if (restartBtn) {
+    restartBtn.addEventListener("click", () => {
+        window.location.reload();
+    });
+    console.log("Restart button found and event listener added.");
+} else {
+    console.error("Restart button not found.");
+}
 
 const progressBar = document.querySelector(".progress-bar"),
   progressText = document.querySelector(".progress-text");
@@ -239,3 +243,5 @@ const playAdudio = (src) => {
   const audio = new Audio(src);
   audio.play();
 };
+
+});
